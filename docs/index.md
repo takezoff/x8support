@@ -5,7 +5,7 @@
 x8studioは、レトロで小さなゲームを作るスマホ向けアプリです。（開発中）
 小さな機能にデザインされた架空のマシンと、そこで動くゲームを作るための開発環境が全て含まれています。
 
-[](https://www.youtube.com/watch?v=nXN5glRfmDg)
+![](images/x8_digest_demo.gif "Digest")
 
 ![](images/x8_code_editor_image.png "Code Editor")
 ![](images/x8_gfx_editor_image.png "Gfx Editor")
