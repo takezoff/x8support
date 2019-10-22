@@ -43,8 +43,7 @@
 ## お問い合わせ
 個人情報の取り扱いに関するお問い合わせは、下記までご連絡ください。
 
-takezo
-Email : takezogames.sprt@gmail.com
+<p>Email : <a href="mailto:takezogames.sprt@gmail.com">takezogames.sprt@gmail.com</a></p>
 
 ---
 2019年10月22日 策定

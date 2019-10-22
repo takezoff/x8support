@@ -38,6 +38,8 @@ Twitter : https://twitter.com/takezoffcom
 <img src="images/x8_youtube_link.gif" width="50">
 Youtube : https://www.youtube.com/channel/UCwgcWt5PxUglr_n14SEIo5Q
 
+<p>Email : <a href="mailto:takezogames.sprt@gmail.com">takezogames.sprt@gmail.com</a></p>
+
 ---
 
 ## プライバシーポリシー
