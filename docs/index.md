@@ -42,4 +42,5 @@ Youtube : https://www.youtube.com/channel/UCwgcWt5PxUglr_n14SEIo5Q
 
 ## プライバシーポリシー
 
-[プライバシーポリシー](PrivacyPolicy.md)
+[**プライバシーポリシー**](PrivacyPolicy.md)
+
