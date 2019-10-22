@@ -1,3 +1,5 @@
+<link rel="icon" href="favicon.ico">
+
 # <img src="images/app_icon_192x192.png" width="50"> x8studio
 
 ## これはなに？
