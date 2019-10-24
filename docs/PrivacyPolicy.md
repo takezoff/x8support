@@ -1,7 +1,3 @@
-# [x8studio](index.html)
-
----
-
 # プライバシーポリシー
 
 ## x8studioのプライバシーポリシー
