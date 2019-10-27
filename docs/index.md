@@ -1,11 +1,11 @@
-# <img src="images/app_icon_192x192.png" width="50"> x8studio
+# <img src="imgs/home/app_icon_192x192.png" width="50"> x8studio
 
 ## これはなに？
 
 **x8studio**は、レトロで小さなゲームを作って遊べるスマホ向けアプリです。（開発中）
 小さな機能にデザインされた架空のマシン**x8**と、そこで動くゲームを作るための開発環境が全て含まれています。
 
-![](images/x8_digest_demo.gif "Digest")
+![](imgs/home/x8_digest_demo.gif "Digest")
 
 ---
 
@@ -18,6 +18,15 @@
 - **スプライト**    : 256(8x8スプライト)
 - **マップ**        : 128x128(8x8チップ)
 - **オーディオ**    : 32Sfx、32Phrase、32Music
+
+---
+
+## Lua
+
+x8studioではプログラミングにLua言語を利用します。
+オフィシャルサイトはこちら
+
+[![](imgs/lua/Lua-Logo_128x128.png "Lua-Logo")](https://www.lua.org/home.html)
 
 ---
 
@@ -75,13 +84,18 @@
 
 ---
 
-## <img src="images/takezoff-com-icon.png" width="50"> 作ってる人
+## <img src="imgs/home/takezoff-com-icon.png" width="50"> 作ってる人
 
-<img src="images/x8_twitter_link.gif" width="50">
+<img src="imgs/home/x8_twitter_link.gif" width="50">
 Twitter : https://twitter.com/takezoffcom
 
-<img src="images/x8_youtube_link.gif" width="50">
+<img src="imgs/home/x8_youtube_link.gif" width="50">
 Youtube : https://www.youtube.com/channel/UCwgcWt5PxUglr_n14SEIo5Q
 
 <p>Email : <a href="mailto:takezogames.sprt@gmail.com">takezogames.sprt@gmail.com</a></p>
 
+---
+
+## クレジット
+
+- The Lua logos are Graphic design by A. Nakonechnyj. Copyright © 1998. All rights reserved. (see http://www.lua.org/images)
