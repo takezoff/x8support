@@ -21,66 +21,67 @@
 
 ---
 
-## Lua
+## <img src="imgs/lua/Lua-Logo_128x128.png" width="50"> Lua
 
-x8studioではプログラミングにLua言語を利用します。
-オフィシャルサイトはこちら
+x8studioではプログラミングにLua言語(Lua 5.3)を利用します。
 
-[![](imgs/lua/Lua-Logo_128x128.png "Lua-Logo")](https://www.lua.org/home.html)
+- Luaのオフィシャルサイトは[こちら](https://www.lua.org/home.html)
+- オフィシャルの**Lua 5.3 リファレンスマニュアル**は[こちら](https://www.lua.org/manual/5.3/)
+- **Lua 5.3 リファレンスマニュアル**の日本語訳（非公式）は[こちら](http://milkpot.sakura.ne.jp/lua/lua53_manual_ja.html)(感謝です！！)
 
 ---
 
 ## Home画面
 
-![](imgs/manual/x8_doc_home_sample.png "Home") Home画面では、作ったゲームのプレイやプロジェクトの新規作成／削除などが行なえます。
+![](imgs/home/x8_mode_home.png "Home") Home画面では、作ったゲームのプレイやプロジェクトの新規作成／削除などが行なえます。
 
 ---
 
 ## Codeエディタ
 
-![](imgs/manual/x8_doc_code.png "Code Editor") Codeエディタでは、Lua言語でプログラムを書くことが出来ます。x8独自APIと、Luaの標準ライブラリ（一部を除く）が利用出来ます。
+![](imgs/home/x8_mode_code.png "Code Editor") Codeエディタでは、Lua言語でプログラムを書くことが出来ます。x8独自APIと、Luaの標準ライブラリ（一部を除く）が利用出来ます。
 
 ---
 
 ## Gfxエディタ
 
-![](imgs/manual/x8_doc_gfx.png "Gfx Editor") スプライトやマップに利用される画像データを作成出来ます。
+![](imgs/home/x8_mode_gfx.png "Gfx Editor") スプライトやマップに利用される画像データを作成出来ます。
 
 ---
 
 ## Mapエディタ
 
-![](imgs/manual/x8_doc_map.png "Map Editor") Gfxエディタで作成した画像データをチップとして並べて、より大きな画像のデータを作成出来ます。
+![](imgs/home/x8_mode_map.png "Map Editor") Gfxエディタで作成した画像データをチップとして並べて、より大きな画像のデータを作成出来ます。
 
 ---
 
 ## Sfxエディタ
 
-![](imgs/manual/x8_doc_sfx_trial.png "Sfx Editor") ゲームのSEや、Phraseエディタで楽器として利用できる、ごく短いサウンド素材を作成出来ます。
+![](imgs/home/x8_mode_sfx.png "Sfx Editor") ゲームのSEや、Phraseエディタで楽器として利用できる、ごく短いサウンド素材を作成出来ます。
 
 ---
 
 ## Phraseエディタ
 
-![](imgs/manual/x8_doc_phrase_trial.png "Phrase Editor") Sfxエディタで作成したサウンドを並べて、ゲームのジングルやMusicエディタで曲を作成する際に利用できる、短いフレーズを作成出来ます。
+![](imgs/home/x8_mode_phrase.png "Phrase Editor") Sfxエディタで作成したサウンドを並べて、ゲームのジングルやMusicエディタで曲を作成する際に利用できる、短いフレーズを作成出来ます。
 
 ---
 
 ## Musicエディタ
 
-![](imgs/manual/x8_doc_music_trial.png "Music Editor") Phraseエディタで作成したフレーズを並べて、曲を作成出来ます。
+![](imgs/home/x8_mode_music.png "Music Editor") Phraseエディタで作成したフレーズを並べて、曲を作成出来ます。
 
 ---
 
 ## Debugモード
 
-![](imgs/manual/x8_doc_debug_log.png "Debug Mode") 開発中のゲーム動かしてテストするモードです。
+![](imgs/home/x8_mode_debug.png "Debug Mode") 開発中のゲーム動かしてテストするモードです。
 
 ---
 
 ## Runモード
 
-![](imgs/manual/x8_doc_run_on.png "Run Mode") 完成したゲームを遊ぶモードです。
+![](imgs/home/x8_mode_run.png "Run Mode") 完成したゲームを遊ぶモードです。
 
 ---
 
