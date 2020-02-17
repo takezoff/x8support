@@ -200,7 +200,7 @@ end
 
 ## ボタンの入力を取得する
 
-![](imgs/tutorial/x8_tuto_input_buttons.gif "Input buttons")
+![](imgs/tutorial/x8_tuto_button_input.gif "Input buttons")
 
 ボタンの入力を取得して、ボタンの状態を表示してみます。
 ```
