@@ -14,7 +14,7 @@
 * 本アプリの利用状況
 * 本アプリのアプリ内課金に関する情報
 
-Unity Analytics のプライバシーポリシーに関しては Unity Technologies の [Privacy Policy](https://unity3d.com/legal/privacy-policy) をご参照ください。
+詳しくは、Unity Technologies の [Privacy Policy](https://unity3d.com/legal/privacy-policy) をご確認ください。
 
 ## 個人情報の利用目的
 開発者及び本アプリは、取得した個人情報を以下の目的のために利用いたします。
