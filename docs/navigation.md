@@ -1,5 +1,9 @@
 [Home](index.md)
 
+[Topics]()
+
+  * [オープンβテストのお知らせ](topic_open_beta_test.md)
+
 [Manual]()
 
   * [ver. 1.0](manual.md)

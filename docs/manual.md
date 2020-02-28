@@ -46,11 +46,6 @@
     - <img src="imgs/icons/ui_icon_14.png" width="18"> **Undo**（もとに戻す）
     - <img src="imgs/icons/ui_icon_15.png" width="18"> **Redo**（やり直す）
 
-### ポップアップメニュー
-ポップアップメニューはボタンをタッチしている間だけ現れるメニューです。タッチしたまま選択したい項目に移動し、タッチを放すことで確定されます。
-
-![](imgs/manual/x8_doc_popup_menu.gif "Popup Menu")
-
 ### <img src="imgs/icons/ui_icon_28.png" width="30"> タッチカーソル
 **タッチカーソル**は指でのタッチでは難しい細かい作業を行う場合に利用します。
 
@@ -103,7 +98,7 @@
     - <img src="imgs/icons/ui_icon_31.png" width="18"> はスタンプデータの`color:0`の抜き設定を切り替えます。
 - **カラーパレット**は描画ツールで参照されるカラーを選択します。
 - **描画ツール**
-    - <img src="imgs/icons/ui_icon_33.png" width="18"> ペンで描画する
+    - <img src="imgs/icons/ui_icon_33.png" width="18"> ペンで描画する（※タッチしたまま選択、離して確定）
         - <img src="imgs/icons/ui_icon_33.png" width="18"> ピクセルペン
         - <img src="imgs/icons/ui_icon_34.png" width="18"> 四角いペン
         - <img src="imgs/icons/ui_icon_35.png" width="18"> 丸いペン
@@ -173,7 +168,7 @@
     - <img src="imgs/icons/ui_icon_49.png" width="18"> ノートをタッチして音高を設定出来ます。調整キーでも音高を設定出来ます。
     - <img src="imgs/icons/ui_icon_50.png" width="18"> タッチで選択したノートの音高を鍵盤で設定出来ます。選択位置は自動的に右へ移動します。調整キーでも音高を設定出来ます。
     - <img src="imgs/icons/ui_icon_51.png" width="18"> タッチでノートのボリュームを設定出来ます。調整キーでもボリュームを設定出来ます。
-    - <img src="imgs/icons/ui_gfx_icon_08.png" width="18"> タッチでノートの波形を設定出来ます。
+    - <img src="imgs/icons/ui_gfx_icon_08.png" width="18"> タッチでノートの波形を設定出来ます。（※タッチしたまま選択、離して確定）
         - <img src="imgs/icons/ui_gfx_icon_08.png" width="18"> サイン波
         - <img src="imgs/icons/ui_gfx_icon_09.png" width="18"> 矩形波(1:1)
         - <img src="imgs/icons/ui_gfx_icon_10.png" width="18"> 矩形波(1:3)
@@ -206,7 +201,7 @@
     - <img src="imgs/icons/ui_icon_70.png" width="18"> ログビュー表示がONの場合、ゲーム画面上に各ログの１行目が表示されます。タッチでログを選択すると、ログ詳細ビューにそのログの詳細が表示されます。
     - **ログ詳細ビュー**をタッチすると**ログ詳細ウィンドウ**が開きます。
 - **ログ詳細ウィンドウ**
-    - ログにエラー箇所が表示されている場合、`エラー位置へ`ボタンを押すとCodeエディタに遷移してエラー位置に移動出来ます。
+    - ログにエラー箇所が表示されている場合、`エラーに移動`ボタンを押すとCodeエディタに遷移してエラー位置に移動出来ます。
 - **ボリューム**
     - 仮想マシンのボリュームを変更出来ます。何らかの要因で仮想マシンがポーズされると自動的に0に設定されます。
 - **ゲームパッドボタン**
