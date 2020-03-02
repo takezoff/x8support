@@ -1,4 +1,5 @@
-# <img src="imgs/home/app_icon_192x192.png" width="50"> オープンβテストのお知らせ
+# <img src="imgs/home/app_icon_192x192.png" width="50"> オープンβテストのお知らせ（2020/03/02）
+
 
 ![](imgs/topics/x8_digest_demo.gif "Sample Game Demo")
 
