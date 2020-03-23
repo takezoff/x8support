@@ -2,7 +2,7 @@
 
 [Topics]()
 
-  * [オープンβテストのお知らせ](topic_open_beta_test.md)
+  * [2020/03/02：オープンβテストのお知らせ（終了しました）](topic_20200302_open_beta_test.md)
 
 [Manual]()
 
