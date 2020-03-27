@@ -1,15 +1,11 @@
 # <img src="imgs/home/app_icon_192x192.png" width="50"> x8studio
 
-## お知らせ
-
-- **2020/03/23：オープンβテストは終了いたしました。ご参加いただきありがとうございました！**
-
----
-
 ## これはなに？
 
-**x8studio**は、レトロで小さなゲームをつくって遊べるスマホ向けアプリです。（2020/02/16：現在、開発中）
+**x8studio**は、レトロで小さなゲームをつくって遊べるスマホ向けアプリです。
 小さな機能にデザインされた架空のマシン**x8**と、そこで動くゲームをつくるための開発環境が含まれています。
+プログラミングを始めてみたい初心者の方にもおすすめです！
+今すぐゲームプログラミングを初められます！
 
 ![](imgs/home/x8_digest_demo.gif "Digest")
 
@@ -56,7 +52,7 @@ x8studioではプログラミングにLua言語(Lua 5.3)を利用します。
 
 ---
 
-## <img src="imgs/home/takezoff-com-icon.png" width="50"> これをつくってる人
+## <img src="imgs/home/takezoff-com-icon.png" width="50"> つくってる人
 
 <img src="imgs/home/x8_twitter_link.gif" width="50">
 Twitter : https://twitter.com/takezoffcom
@@ -65,6 +61,8 @@ Twitter : https://twitter.com/takezoffcom
 Youtube : https://www.youtube.com/channel/UCwgcWt5PxUglr_n14SEIo5Q
 
 <p>Email : <a href="mailto:takezogames.sprt@gmail.com">takezogames.sprt@gmail.com</a></p>
+
+１人でやってます。応援して頂けたら嬉しいです。
 
 ---
 

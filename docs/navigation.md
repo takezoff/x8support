@@ -1,21 +1,11 @@
 [Home](index.md)
 
-[Topics]()
+[Manual](manual.md)
 
-  * [2020/03/02：オープンβテストのお知らせ（終了しました）](topic_20200302_open_beta_test.md)
-
-[Manual]()
-
-  * [ver. 1.0](manual.md)
-  * [ver. 0.1（開発段階の古いもの）](manual_0_1.md)
-
-[API Reference]()
-
-  * [ver. 1.0](api_reference.md)
-  * [ver. 0.1（開発段階の古いもの）](api_reference_0_1.md)
+[API Reference](api_reference.md)
 
 [Tutorial]()
 
-  * [Programming Tutorial](code_tutorial.md)
+  * [Programming Tutorial](programming_tutorial.md)
 
 [Privacy Policy](PrivacyPolicy.md)

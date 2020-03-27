@@ -1,4 +1,4 @@
-# プログラムのチュートリアル
+# プログラミングチュートリアル
 
 プログラムはCodeエディタで書くことができます。
 プログラムはLua言語（Lua 5.3）で書きます。
@@ -24,11 +24,15 @@ x8.fnt("Hello World!",0,0)
 
 プログラムの中にプログラムとは解釈されないメモ（コメント）を書くことができます。
 ```
+-- Comment @ｺﾒﾝﾄ
+
 --[[
    This is
    all comments.
+   @ｺﾚﾊ ｽﾍﾞﾃ ｺﾒﾝﾄ
 ]]
-x8.fnt("Hello World!",0,0) -- Comments until the end of the line
+
+x8.fnt("Hello World!",0,0) -- Comments until the end of the line @ｷﾞｮｳﾏﾂﾏﾃﾞ ｺﾒﾝﾄ
 ```
 - `--`の後、行の終わりまではコメントになります。（行末コメント）
 - `--[[`から`]]`までの間は全てコメントになります。（ブロックコメント）
@@ -42,24 +46,24 @@ x8.fnt("Hello World!",0,0) -- Comments until the end of the line
 画面に図形を描いてみます。
 
 ```
--- Draw shapes on the screen.
+-- Draw shapes on the screen. @ｶﾞﾒﾝﾆ ｽﾞｹｲｦ ﾋﾞｮｳｶﾞ
 
--- Draw a pixel.
+-- Draw a pixel. @ﾋﾟｸｾﾙｦ ﾋﾞｮｳｶﾞ
 x8.pixel(30,20,7)
 
--- Draw a straight line.
+-- Draw a straight line. @ﾁｮｸｾﾝｦ ﾋﾞｮｳｶﾞ
 x8.line(70,30,110,10,8)
 
--- Draw a rectangle.
+-- Draw a filled rectangle. @ﾇﾘﾂﾌﾞｻﾚﾀ ｸｹｲｦ ﾋﾞｮｳｶﾞ
 x8.rect(20,50,60,70,9)
 
--- Draw a filled rectangle.
+-- Draw a rectangle. @ｸｹｲｦ ﾋﾞｮｳｶﾞ
 x8.rectbdr(80,45,100,75,11)
 
--- Draw a circle.
+-- Draw a filled circle. @ﾇﾘﾂﾌﾞｻﾚﾀ ｴﾝｦ ﾋﾞｮｳｶﾞ
 x8.circ(40,100,10,12)
 
--- Draw a filled circle.
+-- Draw a circle. @ｴﾝｦ ﾋﾞｮｳｶﾞ
 x8.circbdr(90,100,15,13)
 ```
 - `pixel()`は画面に点を描きます。
@@ -78,20 +82,20 @@ x8.circbdr(90,100,15,13)
 無限に回るループを作って、プログラムが終了しないようにしてみます。
 これは、ゲームでよくあるメインループになります。
 ```
--- Main Loop
+-- Main Loop @ﾒｲﾝﾙｰﾌﾟ
 
-count = 0 -- Frame counter
+count = 0 -- Frame counter @ﾌﾚｰﾑｶｳﾝﾀ
 
--- Infinite loop
+-- Infinite loop @ﾑｹﾞﾝﾙｰﾌﾟ
 while true do
 
-   -- You must always call wait() in an infinite loop.
+   -- You must always call wait() in an infinite loop. @ﾑｹﾞﾝﾙｰﾌﾟﾅｲﾃﾞﾊ ｶﾅﾗｽﾞ wait() ｦ ﾖﾌﾞ
    x8.wait()
 
-   -- Clear the screen.
+   -- Clean the screen. @ｶﾞﾒﾝｦ ｸﾘｱ
    x8.cls()
 
-   -- Describes the processing of the frame.
+   -- Here is the processing in the frame. @ｺｺﾆ ﾌﾚｰﾑﾃﾞﾉ ｼｮﾘｦ ｷｼﾞｭﾂｼﾏｽ
    x8.fnt(count, 0, 0)
    count = count + 1
 
@@ -110,15 +114,15 @@ end
 たくさんの円をランダムに描いてみます。
 
 ```
--- Draw a lot of circles.
+-- Draw a lot of circles. @ﾀｸｻﾝﾉ ｴﾝｦ ﾋﾞｮｳｶﾞ
 
--- Main loop.
+-- Main loop. @ﾒｲﾝﾙｰﾌﾟ
 while true do
 
-   -- Wait for frame update.
+   -- Wait for frame update. @ﾌﾚｰﾑｺｳｼﾝｦ ﾏﾂ
    x8.wait()
 
-   -- Draw a circle at random.
+   -- Draw a circle at random. @ｴﾝｦ ﾗﾝﾀﾞﾑﾆ ﾋﾞｮｳｶﾞ
    x = math.random(128)
    y = math.random(128)
    r = math.random(20)
@@ -138,18 +142,18 @@ end
 フレーム毎に、画面をクリアしてから図形を描いてみます。
 
 ```
--- Clean the screen.
+-- Clear the screen. @ｶﾞﾒﾝｦ ｸﾘｱｽﾙ
 
--- Main loop.
+-- Main loop. @ﾒｲﾝﾙｰﾌﾟ
 while true do
 
-   -- Wait for 20 frames update.
+   -- Wait for 20 frames update. @20ﾌﾚｰﾑ ﾏﾂ
    x8.wait(20)
 
-   -- Clean the screen.
+   -- Clear the screen. @ｶﾞﾒﾝｦ ｸﾘｱｽﾙ
    x8.cls()
 
-   -- Draw a circle at random.
+   -- Draw a circle at random. @ﾗﾝﾀﾞﾑﾆ ｴﾝｦ ﾋﾞｮｳｶﾞ
    x = math.random(128)
    y = math.random(128)
    r = math.random(20)
@@ -169,27 +173,27 @@ end
 
 図形を描く位置をフレーム毎に変えることで、図形を動かしてみます。
 ```
--- Move the circle.
+-- Move the circle. @ｴﾝｦ ｳｺﾞｶｽ
 
 x = 20 -- x
-v = 2  -- velocity
+v = 2  -- velocity @ｿｸﾄﾞ
 
--- Main loop.
+-- Main loop. @ﾒｲﾝﾙｰﾌﾟ
 while true do
 
-   -- Wait for frame update.
+   -- Wait for frame update. @ﾌﾚｰﾑｺｳｼﾝｦ ﾏﾂ
    x8.wait()
 
-   -- Clean the screen.
+   -- Clear the screen. @ｶﾞﾒﾝｦ ｸﾘｱｽﾙ
    x8.cls()
 
-   -- Draw the circle.
+   -- Draw the circle. @ｴﾝｦ ﾋﾞｮｳｶﾞ
    x8.circ(x, 50, 10, 3)
 
-   -- Update the position of the circle.
+   -- Update the position of the circle. @ｴﾝﾉ ｻﾞﾋｮｳｦ ｺｳｼﾝ
    x = x + v
 
-   -- Invert velocity at screen edge.
+   -- Invert velocity at screen edge. @ｶﾞﾒﾝﾉﾊｼﾃﾞ ｿｸﾄﾞｦ ﾊﾝﾃﾝ
    if (x < 20) or (x > 100) then v = -v end
 
 end
@@ -204,18 +208,18 @@ end
 
 ボタンの入力を取得して、ボタンの状態を表示してみます。
 ```
--- Get button input.
+-- Get button input. @ﾎﾞﾀﾝﾉ ﾆｭｳﾘｮｸｦ ｼｭﾄｸ
 
--- Main loop.
+-- Main loop. @ﾒｲﾝﾙｰﾌﾟ
 while true do
 
-   -- Wait for frame update.
+   -- Wait for frame update. @ﾌﾚｰﾑｺｳｼﾝｦ ﾏﾂ
    x8.wait()
 
-   -- Clean the screen.
+   -- Clear the screen. @ｶﾞﾒﾝｦ ｸﾘｱｽﾙ
    x8.cls()
 
-   -- Show button trigger status.
+   -- Show button trigger status. @ﾎﾞﾀﾝﾉ ﾄﾘｶﾞｰﾉ ｼﾞｮｳﾀｲｦ ﾋｮｳｼﾞ
    x8.color(7)
    if x8.btntrg(0) then x8.rect(10-2, 50-2, 20+2, 60+2) end -- ←
    if x8.btntrg(1) then x8.rect(40-2, 50-2, 50+2, 60+2) end -- →
@@ -226,7 +230,7 @@ while true do
    if x8.btntrg(6) then x8.circ(80, 55, 6+2) end -- Ⓒ
    if x8.btntrg(7) then x8.circ(95, 40, 6+2) end -- Ⓓ
 
-   -- Draw buttons.
+   -- Draw buttons. @ﾎﾞﾀﾝｦ ﾋﾞｮｳｶﾞ
    x8.color(1)
    x8.rect(10, 50, 20, 60) -- ←
    x8.rect(40, 50, 50, 60) -- →
@@ -237,7 +241,7 @@ while true do
    x8.circ(80, 55, 6) -- Ⓒ
    x8.circ(95, 40, 6) -- Ⓓ
 
-   -- Show button press status.
+   -- Show button press status. @ﾎﾞﾀﾝﾉ ｵｳｶﾉ ｼﾞｮｳﾀｲｦ ﾋｮｳｼﾞ
    x8.color(7)
    if x8.btnprs(0) then x8.rect(10+2, 50+2, 20-2, 60-2) end -- ←
    if x8.btnprs(1) then x8.rect(40+2, 50+2, 50-2, 60-2) end -- →
@@ -247,7 +251,6 @@ while true do
    if x8.btnprs(5) then x8.circ(110,55, 6-2) end -- Ⓑ
    if x8.btnprs(6) then x8.circ(80, 55, 6-2) end -- Ⓒ
    if x8.btnprs(7) then x8.circ(95, 40, 6-2) end -- Ⓓ
-
 end
 ```
 - `btnprs(n)`は、n番のボタンが現在押されているかどうかを`true`か`false`で返します。
@@ -261,36 +264,35 @@ end
 
 図形をボタン入力によって動かしたり、色や大きさを変えたりしてみます。
 ```
--- Move circle with button input.
+-- Move circle with button input. @ﾎﾞﾀﾝﾆｭｳﾘｮｸﾃﾞ ｴﾝｦ ｳｺﾞｶｽ
 
 x = 50 -- x
 y = 50 -- y
-r = 20 -- radius
-c = 7  -- color 
-v = 2  -- velocity
+r = 20 -- radius @ﾊﾝｹｲ
+c = 7  -- color @ｶﾗｰ
+v = 2  -- velocity @ｿｸﾄﾞ
 
--- Main loop.
+-- Main loop. @ﾒｲﾝﾙｰﾌﾟ
 while true do
 
-   -- Wait for frame update.
+   -- Wait for frame update. @ﾌﾚｰﾑｺｳｼﾝｦ ﾏﾂ
    x8.wait()
 
-   -- Clean the screen.
+   -- Clear the screen. @ｶﾞﾒﾝｦ ｸﾘｱｽﾙ
    x8.cls()
 
-   -- Move with direction buttons.
+   -- Move with direction buttons. @ﾎｳｺｳﾎﾞﾀﾝﾃﾞ ｲﾄﾞｳ
    if x8.btnprs(0) then x = x - v end -- ←
    if x8.btnprs(1) then x = x + v end -- →
    if x8.btnprs(2) then y = y - v end -- ↑
    if x8.btnprs(3) then y = y + v end -- ↓
 
-   -- Change color and size with A and B button.
+   -- Change color and size with A and B button. @Aﾎﾞﾀﾝﾄ Bﾎﾞﾀﾝﾃﾞ ｲﾛﾄ ｻｲｽﾞｦ ｶｴﾙ
    if x8.btntrg(4) then c = math.random(15) end -- Ⓐ
    if x8.btntrg(5) then r = math.random(30) end -- Ⓑ
 
-   -- Draw the circle
+   -- Draw the circle @ｴﾝｦ ﾋﾞｮｳｶﾞ
    x8.circ(x, y, r, c)
-
 end
 ```
 - ゲームでキャラクターを動かしたりする基本的な方法になります。
