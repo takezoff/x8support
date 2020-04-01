@@ -1,11 +1,13 @@
-[Home](index.md)
+[x8studio](index.md)
 
-[Manual](manual.md)
+[マニュアル](manual.md)
 
-[API Reference](api_reference.md)
+[APIリファレンス](api_reference.md)
 
-[Tutorial]()
+[チュートリアル]()
 
-  * [Programming Tutorial](programming_tutorial.md)
+  * [プログラミングチュートリアル](programming_tutorial.md)
 
-[Privacy Policy](PrivacyPolicy.md)
+[利用規約](TermsOfUse.md)
+
+[プライバシーポリシー](PrivacyPolicy.md)
