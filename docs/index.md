@@ -31,6 +31,8 @@ x8studioではプログラミングにLua言語(Lua 5.3)を利用します。
 - オフィシャルの**Lua 5.3 リファレンスマニュアル**は[こちら](https://www.lua.org/manual/5.3/)
 - **Lua 5.3 リファレンスマニュアル**の日本語訳（非公式）は[こちら](http://milkpot.sakura.ne.jp/lua/lua53_manual_ja.html)(感謝です！)
 
+The Lua logos are Graphic design by A. Nakonechnyj. Copyright © 1998. All rights reserved. (see http://www.lua.org/images)
+
 ---
 
 ## いろんなエディタ
@@ -52,20 +54,31 @@ x8studioではプログラミングにLua言語(Lua 5.3)を利用します。
 
 ---
 
-## <img src="imgs/home/takezoff-com-icon.png" width="50"> つくってる人
+## 資料とか
 
-<img src="imgs/home/x8_twitter_link.gif" width="50">
-Twitter : https://twitter.com/takezoffcom
+### 動画
 
-<img src="imgs/home/x8_youtube_link.gif" width="50">
+アップされている動画には、**既に廃止された機能や開発中のデモも含まれています。**
 Youtube : https://www.youtube.com/channel/UCwgcWt5PxUglr_n14SEIo5Q
 
-<p>Email : <a href="mailto:takezogames.sprt@gmail.com">takezogames.sprt@gmail.com</a></p>
-
-１人でやってます。応援して頂けたら嬉しいです。
+<img src="imgs/home/x8_youtube_link.gif" width="50">
 
 ---
 
-## クレジット
+## <img src="imgs/home/takezoff-com-icon.png" width="50"> 開発者と連絡先
 
-- The Lua logos are Graphic design by A. Nakonechnyj. Copyright © 1998. All rights reserved. (see http://www.lua.org/images)
+### 開発者
+
+**takezo**です。田舎でひっそりとプログラムを書いてます。
+１人でやってます。応援して頂けたら嬉しいです。
+
+### 連絡先
+
+お問い合わせなどは以下のどちらからでもお気軽にどうぞ。
+
+Twitter : https://twitter.com/takezoffcom
+
+<img src="imgs/home/x8_twitter_link.gif" width="50">
+
+<p>Email : <a href="mailto:takezogames.sprt@gmail.com">takezogames.sprt@gmail.com</a></p>
+
