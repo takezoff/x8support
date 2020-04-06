@@ -25,11 +25,11 @@
 
 ## <img src="imgs/lua/Lua-Logo_128x128.png" width="50"> Lua でプログラミング
 
-x8studioではプログラミングにLua言語(Lua 5.3)を利用します。
+x8studioではプログラミングにLua言語(Lua 5.3)を利用します。以下の外部リンクの資料が参考になります。
 
-- Luaのオフィシャルサイトは[こちら](https://www.lua.org/home.html)
-- オフィシャルの**Lua 5.3 リファレンスマニュアル**は[こちら](https://www.lua.org/manual/5.3/)
-- **Lua 5.3 リファレンスマニュアル**の日本語訳（非公式）は[こちら](http://milkpot.sakura.ne.jp/lua/lua53_manual_ja.html)(感謝です！)
+- Luaのオフィシャルサイトは[こちら](https://www.lua.org/home.html)です。
+- オフィシャルの**Lua 5.3 リファレンスマニュアル**は[こちら](https://www.lua.org/manual/5.3/)です。
+- **Lua 5.3 リファレンスマニュアルの日本語訳（非公式）**は[こちら](http://milkpot.sakura.ne.jp/lua/lua53_manual_ja.html)です。(リンクさせていただき感謝です！)
 
 The Lua logos are Graphic design by A. Nakonechnyj. Copyright © 1998. All rights reserved. (see http://www.lua.org/images)
 

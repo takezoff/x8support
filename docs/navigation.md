@@ -1,5 +1,7 @@
 [x8studio](index.md)
 
+[クイックスタート](quick_start.md)
+
 [マニュアル](manual.md)
 
 [APIリファレンス](api_reference.md)
