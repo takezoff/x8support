@@ -11,6 +11,12 @@
 
 ---
 
+## アプリのダウンロード
+
+<a href="https://apps.apple.com/jp/app/x8studio/id1483337008?mt=8" style="display:inline-block;overflow:hidden;background:url(https://linkmaker.itunes.apple.com/ja-jp/badge-lrg.svg?releaseDate=2020-04-08&kind=iossoftware&bubble=ios_apps) no-repeat;width:135px;height:40px;"></a>
+
+---
+
 ## 架空のマシン
 
 - **表示**          : 128x128、16色固定パレット
