@@ -62,6 +62,10 @@ The Lua logos are Graphic design by A. Nakonechnyj. Copyright © 1998. All right
 
 ## 資料とか
 
+### プレスキット
+
+**プレスキット**的なものは[こちら](press/press_kit.md)です。
+
 ### 動画
 
 アップされている動画には、**既に廃止された機能や開発中のデモも含まれています。**
