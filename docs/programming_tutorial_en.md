@@ -1,8 +1,8 @@
-# プログラミングチュートリアル
+# Programming Tutorial
 
-プログラムはCodeエディタからLua言語（Lua 5.3）を利用して書くことができます。
-Codeエディタで入力と表示に対応しているのは、ASCIIコード（半角英数記号）と一部の文字（カナ、特殊記号）だけなことに注意してください。
-このサイトをアプリが起動している端末で開けば、下で紹介しているプログラムコードを端末のクリップボードを介してコピー＆ペーストできます。ペーストはCodeエディタの**「CBから貼り付け」**で行います。
+Programs can be written from the Code Editor using the Lua language (Lua 5.3).
+Please note that only ASCII codes (half-width alphanumeric symbols) and some characters (kana and special symbols) are supported by the Code Editor for input and display.
+If you open this site on the device where the app is running, you can copy and paste the program code introduced below through the clipboard of the device. Pasting is done in the Code Editor **Cp from CB**.
 
 ---
 
@@ -10,19 +10,19 @@ Codeエディタで入力と表示に対応しているのは、ASCIIコード�
 
 <img src="imgs/tutorial/x8_tuto_hello_world.png" width="448">
 
-画面に文字列を表示してみましょう。
+Let's try displaying the string on the screen.
 ```
 x8.fnt("Hello World!",0,0)
 ```
-- `fnt(..)`が文字列を画面に表示する命令（関数）です。（APIという時もあります）
-- `x8.`はx8独自のAPIであることを表しています。x8独自APIを使う場合は`x8.`を頭に付けます。
-- 関数には処理に必要な情報（引き数）を渡します。`"`で囲まれた部分が表示する文字列で、その後の`0,0`は画面での座標(x,y)を表しています。
+- `fnt(..)` is an instruction (function) to display a string on the screen. (sometimes called API).
+- `x8.` is a proprietary API of x8. To use x8 proprietary API, prefix it with `x8.`.
+- The function passes the information (arguments) required for processing. The part enclosed by `"` is a string to be displayed, and the subsequent `0,0` indicates the coordinates (x,y) on the screen.
 
 ---
 
-## プログラムにコメントを入れる
+## Comment on the program
 
-プログラムの中にプログラムとは解釈されないメモ（コメント）を書くことができます。
+You can write notes (comments) in the program that are not interpreted as a program.
 ```
 -- Comment @ｺﾒﾝﾄ
 
@@ -34,16 +34,16 @@ x8.fnt("Hello World!",0,0)
 
 x8.fnt("Hello World!",0,0) -- Comments until the end of the line @ｷﾞｮｳﾏﾂﾏﾃﾞ ｺﾒﾝﾄ
 ```
-- `--`の後、行の終わりまではコメントになります。（行末コメント）
-- `--[[`から`]]`までの間は全てコメントになります。（ブロックコメント）
+- After the `--` and up to the end of the line is a comment. (end-of-line comment)
+- Everything between `--[[` to `]]` is a comment. (Block comment).
 
 ---
 
-## 図形を描く
+## Draw figures
 
 <img src="imgs/tutorial/x8_tuto_draw_shapes.png" width="448">
 
-画面に図形を描いてみましょう。
+Try to draw figures on the screen.
 
 ```
 -- Draw shapes on the screen. @ｶﾞﾒﾝﾆ ｽﾞｹｲｦ ﾋﾞｮｳｶﾞ
@@ -66,21 +66,21 @@ x8.circ(40,100,10,12)
 -- Draw a circle. @ｴﾝｦ ﾋﾞｮｳｶﾞ
 x8.circbdr(90,100,15,13)
 ```
-- `pixel()`は画面に点を描きます。
-- `line()`は始点(x,y)と終点(x,y)を指定して、画面に直線を描きます。
-- `rectbdr()`は左上(x,y)と右下(x,y)を指定して、画面に矩形を描きます。
-- `rect()`は左上(x,y)と右下(x,y)を指定して、画面に塗りつぶされた矩形を描きます。
-- `circbdr()`は中心(x,y)と半径を指定して、画面に円を描きます。
-- `circ()`は中心(x,y)と半径を指定して、画面に塗りつぶされた円を描きます。
+- `pixel()` draws a point on the screen.
+- `line()` draws a line on the screen, specifying the starting point (x,y) and the ending point (x,y).
+- `rectbdr()` draws a rectangle on the screen with the top-left(x,y) and bottom-right(x,y) rectangles.
+- `rect()` draws a filled rectangle on the screen with top left(x,y) and bottom right(x,y) points.
+- `circbdr()` draws a circle on the screen with the center (x,y) and the radius.
+- `circ()` draws a circle filled with the center (x,y) and the radius.
 
 ---
 
-## メインループを作る
+## Create a main loop
 
 ![](imgs/tutorial/x8_tuto_main_loop.gif "Main loop")
 
-無限に回るループを作って、プログラムが終了しないようにしてみましょう。
-これは、ゲームでよくあるメインループになります。
+Let's try to make a loop that goes around infinitely so that the program doesn't end.
+This will be the main loop, which is common in games.
 ```
 -- Main Loop @ﾒｲﾝﾙｰﾌﾟ
 
@@ -101,17 +101,17 @@ while true do
 
 end
 ```
-- 無限ループ内では、必ず`wait()`を呼ぶ必要があることに注意してください。
-- `wait()`が無い場合、一定時間でタイムアウトエラーによりプログラムが停止します。
-- `cls()`は画面に描かれたものを全て消します。
+- Note that you must always call `wait()` in an infinite loop.
+- If the `wait()` is not specified, the program stops in a certain time due to a timeout error.
+- `cls()` erases all objects drawn on the screen.
 
 ---
 
-## 図形をランダムにたくさん描く
+## Draw a lot of shapes at random
 
 ![](imgs/tutorial/x8_tuto_draw_circles.gif "Draw circles")
 
-たくさんの円をランダムに描いてみましょう。
+Draw a lot of circles at random.
 
 ```
 -- Draw a lot of circles. @ﾀｸｻﾝﾉ ｴﾝｦ ﾋﾞｮｳｶﾞ
@@ -131,15 +131,15 @@ while true do
 
 end
 ```
-- `math.random(n)`は1〜nまでのランダムな数を返します。
+- `math.random(n)` returns a random number from 1 to n.
 
 ---
 
-## 画面をクリアする
+## Clear the screen
 
 ![](imgs/tutorial/x8_tuto_clear_screen.gif "Clear screen")
 
-フレーム毎に、画面をクリアしてから図形を描いてみましょう。
+For each frame, Let's try to draw a figure after clearing the screen.
 
 ```
 -- Clear the screen. @ｶﾞﾒﾝｦ ｸﾘｱｽﾙ
@@ -162,16 +162,16 @@ while true do
 
 end
 ```
-- `cls()`は画面に描かれたものを全て消します。
-- `wait(n)`は、ここでnフレーム待ちます。省略時のnは1です。
+- `cls()` erases all objects drawn on the screen.
+- `wait(n)` waits for n frames here. The default n is 1.
 
 ---
 
-## 図形を動かす
+## Move the figure
 
 ![](imgs/tutorial/x8_tuto_move_circle.gif "Move circle")
 
-図形を描く位置をフレーム毎に変えることで、図形を動かしてみましょう。
+We will try to move the figure by changing the position of drawing the figure in each frame.
 ```
 -- Move the circle. @ｴﾝｦ ｳｺﾞｶｽ
 
@@ -198,15 +198,15 @@ while true do
 
 end
 ```
-- よくあるアニメーションは普通、フレーム毎に位置や画像を少しずつ変更することで実現します。
+- Common animations are usually accomplished by changing the position and image slightly at each frame.
 
 ---
 
-## ボタンの入力を取得する
+## Get the input of the buttons
 
 ![](imgs/tutorial/x8_tuto_button_input.gif "Input buttons")
 
-ボタンの入力を取得して、ボタンの状態を表示してみましょう。
+Let's try to get the input of the button and display the status of the button.
 ```
 -- Get button input. @ﾎﾞﾀﾝﾉ ﾆｭｳﾘｮｸｦ ｼｭﾄｸ
 
@@ -253,16 +253,16 @@ while true do
    if x8.btnprs(7) then x8.circ(95, 40, 6-2) end -- Ⓓ
 end
 ```
-- `btnprs(n)`は、n番のボタンが現在押されているかどうかを`true`か`false`で返します。
-- `btntrg(n)`は、n番のボタンがこのフレームで、押されていない → 押された、と変化したかどうかを`true`か`false`で返します。
+- `btnprs(n)` returns `true` or `false` if the button number n is currently pressed.
+- `btntrg(n)` returns `true` or `false` whether the button number n has been changed from unpressed to pressed in this frame.
 
 ---
 
-## 図形をボタン入力で制御する
+## Control the figure with button input
 
 ![](imgs/tutorial/x8_tuto_control_circle.gif "Control circle")
 
-図形をボタン入力によって動かしたり、色や大きさを変えたりしてみましょう。
+Try to move the figure by entering buttons, changing the color and size of the figure.
 ```
 -- Move circle with button input. @ﾎﾞﾀﾝﾆｭｳﾘｮｸﾃﾞ ｴﾝｦ ｳｺﾞｶｽ
 
@@ -295,23 +295,23 @@ while true do
    x8.circ(x, y, r, c)
 end
 ```
-- ゲームでキャラクターを動かしたりする基本的な方法になります。
+- It will be a basic way to move your character around in the game.
 
 ---
 
-## スプライトを表示する
+## Show sprites
 
 <img src="imgs/tutorial/x8_tuto_draw_sprite.jpg" width="448">
 
-画面にスプライトを表示してみましょう。
+Let's try to show the sprite on the screen.
 
-スプライトとはGfxのチップ（8x8ドット単位の画像）を画面に表示したものです。
-Gfxエディタでスプライトとして表示したい絵を描いたら、その絵の左上をタッチしてチップ番号を覚えておきます。
+A sprite is an image of a Gfx chip (in 8x8 dot units) on the screen.
+When you draw the picture you want to display as a sprite in the Gfx editor, touch the top left corner of the picture to memorize the chip number.
 
 <img src="imgs/tutorial/x8_tuto_gfx_spr1.png" width="448">
 <img src="imgs/tutorial/x8_tuto_gfx_spr2.png" width="448">
 
-準備が出来たらチップ番号を指定してスプライトを表示してみます。
+When you're ready, you can specify the chip number and display the sprite.
 ```
 -- x8.spr(n,x,y[,w[,h,[,flpx[,flpy]]]])
 
@@ -331,22 +331,22 @@ x8.spr(1, 10, 70, 1, 1, true)
 x8.spr(1, 30, 70, 1, 1, false, true)
 ```
 
-- `spr(n,x,y)`で`n`番のチップを画面の`x,y`に表示できます。`w,h`で**チップ単位**の表示サイズを、`flpx,flpy`で左右上下の反転を指定できます。
-- スプライトはゲームのキャラクターや弾などを表現する一番簡単な方法です。
+- You can use `spr(n,x,y)` to display the `n` numbered chip on the screen at `x,y`. You can specify the display size in **chip units** with `w,h`, and flip left/right/upper/down with `flpx,flpy`.
+- Sprites are the easiest way to describe characters, bullets, etc. in a game.
 
 ---
 
-## Gfxの画像を表示する
+## Display Gfx images
 
 <img src="imgs/tutorial/x8_tuto_draw_gfx_images.jpg" width="448">
 
-画面にGfxの画像を表示してみましょう。
+Let's try to display the Gfx image on the screen.
 
-Gfxエディタで表示したい絵を描いたら、その画像領域をドラッグで選択してGfx内での位置とサイズを覚えておきます。
+Once you've drawn the picture you want to display in the Gfx editor, drag and select the image area to remember its position and size in Gfx.
 
 <img src="imgs/tutorial/x8_tuto_gfx_spr2_16x16.png" width="448">
 
-準備が出来たらGfx内での位置とサイズを指定して画像をを表示してみます。
+When you are ready to display the image, specify the position and size in Gfx and try to display the image.
 ```
 -- x8.gfx(gx,gy,gw,gh,x,y[,w[,h[,flpx[,flpy]]]])
 
@@ -365,23 +365,23 @@ x8.gfx(16, 0, 16, 16,  84, 64, 16, 32) -- 16x32
 x8.gfx(16, 0, 16, 16, 108, 64, 16, 32, false, true) -- 16x32,upside down @ｼﾞｮｳｹﾞﾊﾝﾃﾝ
 ```
 
-- `gfx(gx,gy,gw,gh,x,y)`でGfx内の位置`gx,gy`、サイズ`gw,gh`の絵を、画面の位置`x,y`に表示できます。`w,h`で**ピクセル単位**の表示サイズを、`flpx,flpy`で左右上下の反転を指定できます。
-- Gfx内でのサイズの整数倍または整数で割ったサイズ以外で表示すると、絵が少し崩れてしまいますがこれは仕様です。
-- `gfx()`は`spr()`よりもちょっと凝った表現が出来ます。
+- `gfx(gx,gy,gw,gh,x,y)` can display a picture of position `gx,gy` and size `gw,gh` in Gfx at position `x,y` on the screen. You can specify the display size in **pixel units** with `w,h`, and flip left/right/upper/down with `flpx,flpy`.
+- In Gfx, if you display a size that is not an integer multiple of the size or a size divided by an integer, the picture will be slightly distorted, but this is a specification.
+- `gfx()` can be more elaborate than `spr()`.
 
 ---
 
-## マップを表示する
+## Show map
 
 <img src="imgs/tutorial/x8_tuto_draw_map.jpg" width="448">
 
-画面にマップを表示してみましょう。
+Let's see the map on the screen.
 
-Mapエディタで表示したいマップを作成したら、選択ツールなどを利用してMap領域の位置とサイズを覚えておきます。
+After creating the map you want to display in the Map Editor, remember the location and size of the map area by using the selection tool.
 
 <img src="imgs/tutorial/x8_tuto_map_edit.png" width="448">
 
-準備が出来たらMap内での位置とサイズを指定してマップを表示してみます。
+When you are ready, you can try to display the map by specifying the position and size in the map.
 ```
 -- x8.map(mapx,mapy,x,y[,mapw[,maph]])
 
@@ -395,10 +395,10 @@ x8.map(0, 0, 0, 32, 16, 8) -- 16x8
 x8.map(1, 9, 36, 38, 7, 6) -- 7x6
 ```
 
-- `map(mapx,mapy,x,y)`でMap内の位置`mapx,mapy`のチップを、画面の位置`x,y`に表示できます。`mapw,maph`で**チップ単位**のサイズを指定できます。
-- **0番のチップ**（Gfx左上隅のチップ）は描画されないチップ（**抜きチップ**）として機能します。描画したくない（透明にしておきたい）ところは抜きチップで埋めておきます。
-- 重ねて表示する場合は奥のMapから描画していきます。
-- `map()`は背景画像などの広い範囲の絵を表示する場合の一般的な方法です。
+- A `map(mapx,mapy,x,y)` shows a chip at the position `mapx,mapy` in a map at the position `x,y` on the screen. You can specify the **size in chips** by `mapw,maph`.
+- The **0 chip** (the chip in the upper left corner of the Gfx) functions as a chip that is not drawn (**no chip**). If you don't want to draw (and you want to make it transparent), you can fill in the area with the chip.
+- If you want to overlay it, you can draw it from the map at the back.
+- `map()` is a general method to display a wide range of pictures, such as a background image.
 
 ---
 

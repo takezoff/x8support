@@ -1,3 +1,8 @@
+[Language: **日本語**]()
+
+  * [English](index_en.html#!index_en.md)
+  * [日本語](index.html)
+
 [x8studio](index.md)
 
 [クイックスタート](quick_start.md)
