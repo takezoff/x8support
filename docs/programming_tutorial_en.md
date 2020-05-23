@@ -1,8 +1,11 @@
 # Programming Tutorial
 
-Programs can be written from the Code Editor using the Lua language (Lua 5.3).
-Please note that only ASCII codes (half-width alphanumeric symbols) and some characters (kana and special symbols) are supported by the Code Editor for input and display.
-If you open this site on the device where the app is running, you can copy and paste the program code introduced below through the clipboard of the device. Pasting is done in the Code Editor **Cp from CB**.
+## In the beginning
+
+- Programs can be written from **[Code editor](manual_en.md#Code_Editor)** using **[Lua language](manual_en.md#Lua_Materials)**.
+- Please note that **only ASCII code (half-width alphanumeric symbols) and some characters (kana and special symbols)** are supported by the Code Editor.
+- If you open this page on the device where the app is running, you can copy and paste the program code introduced below through the clipboard of the device. Pasting is done in the Code Editor **Cp from CB**.
+- You can copy and paste the program code in **[Reference Project](manual_en.md#Project_Switch)** by loading the tutorial project.
 
 ---
 

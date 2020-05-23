@@ -135,7 +135,8 @@
 
 ### プロジェクト新規作成
 
-- **Home画面**の <img src="imgs/icons/ui_icon_80.png" width="18"> **プロジェクト新規作成**ボタンで空のプロジェクトを新規に作成します。
+- **Home画面**で<img src="imgs/icons/ui_icon_75.png" width="18"> **プロジェクトフォルダ**タブを選択します。
+- <img src="imgs/icons/ui_icon_80.png" width="18"> **プロジェクト新規作成**ボタンで空のプロジェクトを新規に作成します。
 
 ![](imgs/quick_start/x8_qs_home_new_project.png "New project")
 

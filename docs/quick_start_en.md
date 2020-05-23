@@ -135,7 +135,8 @@ Start programming by creating a new project.
 
 ### New Project Creation
 
-- **On the Home screen**, click the <img src="imgs/icons/ui_icon_80.png" width="18"> **New Project** button to create a new, empty project.
+- On the **Home Screen**, select the <img src="imgs/icons/ui_icon_75.png" width="18"> **Project Folder** tab.
+- <Img Src="imgs/icons/ui_icon_80.png" width="18"> **New Project** button to create a new, empty project.
 
 ![](imgs/quick_start/x8_qs_home_new_project.png "New project")
 

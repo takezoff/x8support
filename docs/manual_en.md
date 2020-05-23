@@ -9,26 +9,29 @@ You can play the included sample games and manage user-generated files.
 - The information of the project file selected in the file list is displayed in **Project Information**.
     - **Screenshot** is a screenshot taken in Debug mode.
     - **Project comment** is a comment written at the beginning of the code. Up to four lines of comments will be displayed here, starting with the first line of code with a `--`.
-- <img src="imgs/icons/ui_icon_80.png" width="18"> **New Project** button will create an empty project and move to Studio.
 - The **Folder tab** selects the folder to display the file list.
-    - <img src="imgs/icons/ui_icon_76.png" width="18"> **Sample folder** is the folder that contains the sample files bundled with the app. It is not possible to save or delete files. You can customize the sample file, but the save is done in the project folder.
-    - <img src="imgs/icons/ui_icon_75.png" width="18"> **Project folder** is the folder where user-created projects are stored. You can save and delete files.
+    - <img src="imgs/icons/ui_icon_76.png" width="18"> **Sample folder** is the folder that contains the sample files bundled with the app. You can open the file, but the save is done in the project folder. The file cannot be deleted.
+    - <img src="imgs/icons/ui_icon_75.png" width="18"> **Project folder** is the folder where user-created projects are stored. **Saving the project is always done here**.
+    - <img src="imgs/icons/ui_icon_77.png" width="18"> **Import folder** is the folder where the imported files are stored. You can open the file, but the save is done in the project folder. Please note that **importing a file with the same name as an existing file will overwrite it**.
 - The **file list** shows the files in the folder selected on the Folder tab. Select a file and then select the operation you want to perform with **file operation**.
-- The **file operation** manipulates the selected file.
-    - Open the selected project in <img src="imgs/icons/ui_icon_74.png" width="18"> **Open** and go to Studio.
-    - Start the project selected in <img src="imgs/icons/ui_icon_60.png" width="18"> **Play** directly in Run mode.
-    - Deletes the file selected in <img src="imgs/icons/ui_icon_71.png" width="18"> **deletion**.
+- The **file operation** manipulates the selected file. The button may be found in the <img src="imgs/icons/ui_icon_86.png" width="18"> menu.
+    - <img src="imgs/icons/ui_icon_74.png" width="18"> Open the selected project and go to Studio.
+    - <img src="imgs/icons/ui_icon_60.png" width="18"> Start the selected project directly in Run mode.
+    - <img src="imgs/icons/ui_icon_71.png" width="18"> Deletes the selected file.
+    - <img src="imgs/icons/ui_icon_78.png" width="18"> You can export the selected file outside of this application. **If you don't have an export destination, you can't export.** We recommend using iCloud Drive as a backup for projects you have created with iCloud Drive enabled.
+- In the <img src="imgs/icons/ui_icon_75.png" width="18"> **project folder**, press the <img src="imgs/icons/ui_icon_80.png" width="18"> **New Project** button to create an empty project and transition to Studio.
+- In the <img src="imgs/icons/ui_icon_77.png" width="18"> **import folder**, press the <img src="imgs/icons/ui_icon_77.png" width="18"> **Import** button to import x8studio project files from outside of this application.
 
 ---
 
-## Studio_Common_UI_and_Operations
+## Studio_Common_UI
 
 Here you can create a game using various editors and Debug mode.
 
 ![](imgs/manual/x8_doc_studio_desc.png "Studio Common")
 
-### Top Bar and Bottom Bar
-The top and bottom bars are the same UI for all editors.
+### UI around the top and bottom bars
+The UI around the top and bottom bars is the same for all editors.
 
 - **Hint** show hints about the UI you're touching, temporary notifications, etc.
 - The **Status** displays information related to the current status.
@@ -38,9 +41,9 @@ The top and bottom bars are the same UI for all editors.
     - <img src="imgs/icons/ui_icon_00.png" width="18"> **x8 Menu**
         - Information on this application and links to support pages, etc.
     - <img src="imgs/icons/ui_icon_01.png" width="18"> **File Menu**
-        - manipulation of open project files, etc.
-    - <img src="imgs/icons/ui_icon_03.png" width="18"> **Optional Menu**
-        - Input settings, etc.
+        - Project save, reference load, and close operations
+    - <img src="imgs/icons/ui_icon_02.png" width="18"> **Edit Menu**
+        - Input settings, copy and paste for the current editor, etc.
 - **Editor**
     - <img src="imgs/icons/ui_icon_04.png" width="18"> **Code Editor**
     - <img src="imgs/icons/ui_icon_05.png" width="18"> **Gfx Editor**
@@ -52,8 +55,23 @@ The top and bottom bars are the same UI for all editors.
 - **Undo/Redo**
     - <img src="imgs/icons/ui_icon_14.png" width="18"> **Undo** (undo)
     - <img src="imgs/icons/ui_icon_15.png" width="18"> **Redo** (redo)
+- **Project Switch**
+    - <img src="imgs/icons/ui_icon_63.png" width="18"> **Project Switch**
+        - Switch between an edit project and a reference project.
 
-### <img src="imgs/icons/ui_icon_28.png" width="30"> Touch Cursor
+### <img src="imgs/icons/ui_icon_63.png" width="30">Project_Switch
+The **Project Switch** toggles between **Edit Project** and **Reference Project**.
+
+- **Edit Project** is a project opened in the Home screen that is currently under development.
+- **Reference Project** is a project that can be used to reference other projects, and can be edited and executed, but **cannot be saved**. There will always be one, and you can read other projects with **Reference Load** in the file menu.
+- You can also copy and paste between the edit project and the reference project.
+- You can see which project is currently displayed in the background of the editor.
+    - If the background is **bright**, it is a **edit project**.
+    - If the background is **dark**, it is a **reference project**.
+
+![](imgs/manual/x8_doc_ref_proj.gif "Project Switch")
+
+### <img src="imgs/icons/ui_icon_28.png" width="30">Touch Cursor
 The **touch cursor** is used to perform detailed operations that are difficult to perform with a finger.
 
 - You can move the touch cursor by dragging any part of it except the buttons.
@@ -62,7 +80,7 @@ The **touch cursor** is used to perform detailed operations that are difficult t
 
 ![](imgs/manual/x8_doc_touch_cursor.gif "Touch Cursor")
 
-### <img src="imgs/icons/ui_icon_62.png" width="30"> Screen Keyboard
+### <img src="imgs/icons/ui_icon_62.png" width="30">Screen Keyboard
 **On-screen keyboard** is used for text input without using an external keyboard. The `Shift`, `Ctrl`, and `Alt` modifier toggles have a locking toggle to the left of them, and if not locked, modifiers are turned off after one character input. Press the `Mode` key to switch the input mode from **normal characters** to **special characters** to **katakana**. (The kana is only for JP keyboard.)
 
 ![](imgs/manual/x8_doc_screen_keyboard.gif "Screen Keyboard")
@@ -71,7 +89,8 @@ The **touch cursor** is used to perform detailed operations that are difficult t
 
 ## Code_Editor
 
-You can program in the Lua language. x8's own API and Lua's standard libraries (except for some) are available.
+- You can program in **Lua language (Lua 5.3)**. x8's own API and Lua's standard libraries (except for some) are available.
+- Please note that **only ASCII code (half-width alphanumeric symbols) and some characters (kana and special symbols)** are supported by the Code Editor.
 
 ![](imgs/manual/x8_doc_code_desc.png "Code Editor")
 
@@ -84,6 +103,32 @@ You can program in the Lua language. x8's own API and Lua's standard libraries (
     - <img src="imgs/icons/ui_icon_90.png" width="18"> **Movement Menu** is a menu for moving the cursor, such as moving the page or moving to the top of the line.
     - <img src="imgs/icons/ui_icon_91.png" width="18"> **Search Menu** is the menu for the search function.
     - <img src="imgs/icons/ui_icon_92.png" width="18"> **Input Mode Menu** is a menu to switch the input mode.
+- <img src="imgs/icons/ui_icon_02.png" width="18"> **Edit Menu**
+    - **Copy** copies the currently selected code. Please note that this is a code by code copy, **not a string by string**.
+    - Replace the currently selected code in **Paste** with the one you have already copied. If there is no pre-copied code, it doesn't do anything.
+
+### Lua_Materials
+
+- Lua's official website is [here](https://www.lua.org/home.html).
+- The official **Lua 5.3 Reference Manual** is [here](https://www.lua.org/manual/5.3/).
+- **The Japanese translation of the Lua 5.3 Reference Manual (unofficial)** is [here](http://milkpot.sakura.ne.jp/lua/lua53_manual_ja.html). (Thank you for linking to it!)
+
+### Lua Standard Library
+
+The following **Lua Standard Libraries** are available for x8studio.
+
+|Is it available?|Library|Table|Unavailable Functions|
+|:--:|:---|:---|:---|
+|**YES**|basic library||collectgarbage, dofile, loadfile, load, print|
+|**YES**|coroutine library|`coroutine`|-|
+|NO|package library|`package`|-|
+|**YES**|string manipulation|`string`|dump, pack, packsize, unpack|
+|NO|basic UTF-8 support|`utf8`|-|
+|**YES**|table manipulation|`table`|-|
+|**YES**|mathematical functions|`math`|-|
+|NO|input and output|`io` `file`|-|
+|NO|operating system facilities|`os`|-|
+|NO|debug facilities|`debug`|-|
 
 ### Code Completion and Code Snippets
 When you type a character in the code area, a completion pop-up will open if there is a potential completion. You can also open the word with `Alt+Tab` (if there is a candidate completion) by hovering the cursor over the end of the word.
@@ -108,6 +153,7 @@ You can create image data to be used for sprites and maps.
 - The **Stamp view** shows the captured stamp data.
     - <img src="imgs/icons/ui_icon_31.png" width="18"> toggles the setting of `color:0` for stamp data.
 - The **Color palette** selects the color referenced by the drawing tool.
+    - <img src="imgs/icons/ui_icon_97.png" width="18"> toggles the setting of the drawing tool **Toggle Mode**. In **Toggle Mode**, two colors can be selected. If the starting color is not either color, the color with the mark in the upper left is set, and if the starting color is either color, the other color is set. It does not affect drawing with stamps.
 - **Drawing tools**
     - <img src="imgs/icons/ui_icon_33.png" width="18"> Drawing with a pen (touch and select, release to confirm)
         - <img src="imgs/icons/ui_icon_33.png" width="18"> Pixel Pen
@@ -125,6 +171,9 @@ You can create image data to be used for sprites and maps.
 - **Gfx Selection Tool**
     - <img src="imgs/icons/ui_icon_38.png" width="18"> Fix the shape and size of the Gfx selection area to be edited.
     - <img src="imgs/icons/ui_icon_68.png" width="18"> Display the grid.
+- <img src="imgs/icons/ui_icon_02.png" width="18"> **Edit Menu**
+    - Copy the Gfx data of the currently selected Gfx area with **Copy**.
+    - Paste the copied Gfx data to the currently selected Gfx area with **Paste**. If there is no pre-copied Gfx data, it does nothing.
 
 ![](imgs/manual/x8_doc_gfx_attr_desc.png "Gfx Editor")
 
@@ -132,6 +181,9 @@ You can create image data to be used for sprites and maps.
     - 1 byte (8bit) attribute data corresponding to chip (8x8) is edited.
     - The eight color palettes correspond to the bit positions of the attribute data to be edited.
     - You can turn on the corresponding bit by painting in the edit view.
+- <img src="imgs/icons/ui_icon_02.png" width="18"> **Edit Menu**
+    - Copy the attribute data of the currently selected attribute area with **Copy**.
+    - Pastes the copied attribute data to the currently selected attribute area with **Paste**. If there is no copied attribute data, it does nothing.
 
 ---
 
@@ -161,8 +213,13 @@ Image data created with the Gfx editor can be lined up as chips to create larger
         - <img src="imgs/icons/ui_icon_66.png" width="18"> Allows you to edit only outside of the selection area.
     - <img src="imgs/icons/ui_icon_68.png" width="18"> Display the grid.
 - **Gfx Selection Tool**
+    - <img src="imgs/icons/ui_icon_97.png" width="18"> toggles the placement tool's **Toggle Mode** setting. In **Toggle Mode**, if the chip at the start position is different from the chip to be placed, it is set to **0**, if the chip at the start position is the same as the chip to be placed. If there is more than one chip to be placed, the top left is referenced. It does not affect the placement with stamps.
     - <img src="imgs/icons/ui_icon_38.png" width="18"> Fix the shape and size of the Gfx selection area to be edited.
     - <img src="imgs/icons/ui_icon_68.png" width="18"> Display the grid.
+- <img src="imgs/icons/ui_icon_02.png" width="18"> **Edit Menu**
+    - Copy the map data of the currently selected map area in **Copy**.
+    - Pastes the copied map data to the currently selected map area with **Paste**. If there is no pre-copied Map data, it does nothing.
+    - Copying and pasting in the Map Editor is **for Map data only**. Please note that **Gfx data will not be changed** by this operation if you are running across projects.
 
 ---
 
@@ -198,6 +255,9 @@ It is possible to create short sound data such as sound effects.
     - <img src="imgs/icons/ui_icon_39.png" width="18"> Stop playing Sfx.
 - **Keyboards**.
     - The yellow frame represents the `pitch offset:0`.
+- <img src="imgs/icons/ui_icon_02.png" width="18"> **Edit Menu**
+    - **Copy** copies the currently selected Sfx data.
+    - Replace the currently selected Sfx data in **Paste** with the previously copied Sfx data. If you don't have the copied Sfx data, you don't do anything.
 
 ---
 
@@ -240,7 +300,7 @@ This is the mode of playing the completed game.
 
 The app has its own built-in screen keyboard.
 
-- You can select a screen keyboard from the following in **Input Settings** in <img src="imgs/icons/ui_icon_03.png" width="18"> **Options menu**.
+- You can select a screen keyboard from the following in **Input Settings** in <img src="imgs/icons/ui_icon_02.png" width="18"> **Edit Menu**.
     - **QWERTY JP** makes it a Japanese keyboard. You can enter **kana**.
     - **QWERTY US** for the English keyboard. You cannot type **kana**.
 
@@ -251,7 +311,7 @@ The app has its own built-in screen keyboard.
 External keyboard input is supported.
 
 - For **external keyboards**, English (US) and Japanese (JIS) keyboards in QWERTY arrangement are supported.
-- Since the connected keyboard type is not automatically determined, it is necessary to set the connected keyboard type in **Options Menu** → **Input Settings** → **External Keyboard**.
+- Since the connected keyboard type is not automatically determined, it is necessary to set the connected keyboard type in **Edit Menu** → **Input Settings** → **External Keyboard**.
     - **QWERTY US** recognizes it as an English (US) keyboard with a QWERTY array. Kana cannot be entered.
     - **QWERTY JP** recognizes **some third party Japanese (JIS) keyboards**. You can enter kana.
     - It is recognized as a Japanese (JIS) keyboard by **Apple JP**. You can enter kana.
