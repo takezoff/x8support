@@ -15,6 +15,8 @@
 
   * [Programming Tutorial](programming_tutorial_en.md)
 
+[Downloads](downloads.md)
+
 [Terms of Use](TermsOfUse.md)
 
 [Privacy Policy](PrivacyPolicy.md)
