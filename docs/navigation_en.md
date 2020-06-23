@@ -7,13 +7,13 @@
 
 [Quick Start](quick_start_en.md)
 
-[Manual](manual_en.md)
+[Documents]()
 
-[API Reference](api_reference_en.md)
-
-[Tutorial]()
-
-  * [Programming Tutorial](programming_tutorial_en.md)
+* [x8studio Manual](manual_en.md)
+* [x8 API Reference](api_reference_en.md)
+* [x8 Programming Tutorial](programming_tutorial_en.md)
+* [Lua Simple Reference](lua_basics.md)
+* [Lua Standard Libraries](lua_stdlib.md)
 
 [Downloads](downloads.md)
 
