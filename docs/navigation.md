@@ -7,6 +7,10 @@
 
 [クイックスタート](quick_start.md)
 
+[チュートリアル]()
+
+* [チュートリアル #01](tutorial_01.md)
+
 [ドキュメント]()
 
 * [x8studio マニュアル](manual.md)

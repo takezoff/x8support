@@ -7,6 +7,10 @@
 
 [Quick Start](quick_start_en.md)
 
+[Tutorials]()
+
+* [Tutorial #01](tutorial_01.md)
+
 [Documents]()
 
 * [x8studio Manual](manual_en.md)
