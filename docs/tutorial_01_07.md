@@ -1,378 +1,175 @@
-# プレイシーン以外の全て
+# ラケットの表示と動き
 
-プレイシーンまでもう一息です。プレイシーンの説明に行く前に、他の全てを片付けてしまいましょう。
+いよいよプレイシーンの説明に入っていきます。
 
-ここではプレイシーン以外の全てを説明します。
+ここではラケットの表示と動きについて説明します。
 
 ---
 
-## プレイシーンを除く全コード
+## ラケットを動かすコード
 
 以下のコードとその実行結果を見てください。
 
 ```
-INFO_Y = 118
+x = 32
+y = 108
+w = 24
+h = 4
+v = 2
 
-top_score = 0
-
--- Main
-function main()
-   -- Initialize
-   top_score = 0
-   -- Game scenes
-   while true do
-      titleScene()
-      playScene()
-      gameoverScene()
+while true do
+   -- Move
+   if x8.btnprs(0) then -- ←
+      x = x - v
+   elseif x8.btnprs(1) then -- →
+      x = x + v
    end
-end
-
--- Title Scene
-function titleScene()
-   -- Clear screen
+   -- Draw
    x8.cls()
-   -- Draw title
-   x8.fntscale(3, 3)
-   local title = "B.BREAKER"
-   local tw = x8.fntmeas(title)
-   x8.fnt(title, (128 - tw) * 0.5 + 1, 24 + 1, 11) -- Shadow
-   x8.fnt(title, (128 - tw) * 0.5, 24, 7)
-   -- Draw operating instructions
-   x8.fntscale()
-   local prst = "Press Ⓐ to start game"
-   local prstw = x8.fntmeas(prst)
-   x8.fnt(x8.enc("←→"), 16, 70, 6)
-   x8.fnt(x8.enc("Ⓐ or Ⓑ"), 16, 80, 6)
-   x8.fnt(".. Move Racket", 56, 70, 6)
-   x8.fnt(".. Shoot, Quick", 56, 80, 6)
-   -- Draw message
-   x8.fnt(x8.enc(prst), (128 - prstw) * 0.5, INFO_Y, 7)
-   -- Draw top score
-   x8.fnt("TOP SCORE", 16, 100, 6)
-   x8.fnt(".. "..top_score, 56, 100, 6)
-   -- Wait
-   while true do
-      -- Press A to start game
-      if x8.btntrg(4) then break end
-      -- Next frame
-      x8.wait()
-   end
-end
-
--- Game over scene
-function gameoverScene()
-   -- Clear screen
-   x8.cls()
-   -- Draw message
-   x8.fntscale()
-   local message = "GAME OVER"
-   local w, h = x8.fntmeas(message)
-   local y = 56
-   x8.fnt(message, (128 - w) * 0.5, (128 - h) * 0.5, 8)
-   -- Wait
-   x8.wait(30 * 3)
-end
-
--- Play Scene
-function playScene()
-   x8.cls()
-   x8.fnt("PLAY", 40, 50)
+   x8.rect(x, y, x + w - 1, y + h - 1)
+   -- Next frame
    x8.wait()
-   while true do
-      if x8.btntrg(4) then break end
-      x8.wait()
-   end
-   top_score = top_score + 100
+end
+```
+
+![](imgs/tutorial_01/x8_tuto_01_racket.gif)
+
+これは、ラケットを表示して`←`と`→`のボタンで動かすだけのコードです。ラケットが画面外に出てしまいますが今は気にしません。
+
+---
+
+## 画面に図形を表示する
+
+`x8.rect(x0,y0,x1,y1[,col])`は、画面に四角形や正方形などの**矩形**を描画する関数です。矩形の左上の座標を`x0,y0`で、右下の座標を`x1,y1`で、色を`col`で指定します。`col`は省略できます。
+
+Note: このように関数呼び出しの形を説明する際、角括弧`[ ]`で囲まれた部分は、その部分を**一括して省略**できることを表しています。この`[ ]`は入れ子構造になる場合があります。例えば、`x8.fntscale([sclx[,scly]])`の場合、`scly`、または`sclx,scly`のセットを省略することはできますが、`sclx`だけを省略することはできないことに注意してください。
+
+例えば、以下のコードは、
+
+```
+x8.rect(30, 40, 90, 70, 13)
+```
+
+このような実行結果になります。
+
+![](imgs/tutorial_01/x8_tuto_01_rect.jpg)
+
+**矩形は`x1,y1`の座標を含むため、この場合の幅は`60`ではなく`61`であることに注意してください。**高さについても同様です。
+
+![](imgs/tutorial_01/x8_tuto_01_rect_desc.jpg)
+
+このゲームでは、ラケット、ボール、ブロックをすべて、`x8.rect`を使って表示しています。
+
+---
+
+## ifの詳細
+
+`elseif`は`if`文の制御構造の一部です。既に紹介した`if`文ですが、本当はこんな形をしています。
+
+> `if` 式 `then` ブロック {`elseif` 式 `then` ブロック} [`else` ブロック] `end`
+
+**式**の結果が真なら**`then`ブロック**を実行し、偽なら**`else`ブロック**を実行します。偽の場合`elseif`でさらに制御を分けることができます。
+
+**[ ]** と **{ }** の意味を思い出してください。**[`else` ブロック]** の部分はあってもなくてもよいです。**{`elseif` 式 `then` ブロック}** の部分は何回連続してもよく、また無くてもよいです。
+
+**式の結果が`false`か`nil`なら偽と判断され、それ以外のすべての値（`0`や空文字列`""`なども）なら真と判断されます。**
+
+Note: 条件判断において、`false`と`nil`以外はすべて`真`です。これ大事です。
+
+以下は`if`文による分岐の例です。
+
+```
+if 0 then
+   -- ここに来る
+else
+   -- ここには来ない
 end
 
--- Start the game
-main()
+if nil then
+   -- ここには来ない
+else
+   -- ここに来る
+end
+
+if false then
+   -- ここには来ない
+elseif "" then
+   -- ここに来る
+elseif true then
+   -- 上で分岐しているので、ここには来ない
+else
+   -- ここには来ない
+end
 ```
-
-![](imgs/tutorial_01/x8_tuto_01_bb_scenes.gif)
-
-これは**B.BREAKER**の完全なコードから、プレイシーンの詳細だけを除いたものです。ちょっと長いですが、全体の構造はわかっているし、詳細もほとんど知っていることばかりです。これから残り部分を説明していきます。
-
----
-
-## ローカル変数とグローバル変数
-
-変数の前に`local`を付けると、そこで**新しいローカル変数が作られます**（**ローカル宣言**されます）。今まで紹介してきた`local`を付けない変数は全て**グローバル変数**です。
-
-**ローカル変数**は、その宣言を含む最も内側のブロック内の、その宣言より後方からしか参照できません（**見えません**）。この変数が**見える**範囲のことを**スコープ**と言います。ローカル変数は、変数が見える範囲を限定したい場合や、一時的な利用に限定したい場合に便利です。
-
-**グローバル変数**はどこからでも見えます。プログラム内のいろんな場所から利用したい変数には、グローバル変数を使います。
-
-Hint: 新しいグローバル変数を使う際は、**既に同じ名前のグローバル変数がないか注意する必要があり**、名前の衝突を避けようと変数名も長くなりがちです。ローカル変数なら`x`や`y`などの短い変数名を、名前の衝突を気にせずに使えるうえ、コードも見やすく、デバッグもしやすくなります。ローカル変数で済むところはできるだけローカル変数を使いましょう。
-
-Hint: **スコープ**の詳細については[可視性ルール](lua_basics.md#可視性ルール)を見てください。
-
----
-
-## 特殊文字
-
-x8で利用出来る文字フォントには、いくつか独自の**特殊文字**があります。特殊文字の入力には、入力される文字がキートップに表示される[画面キーボード](manual.md#画面キーボード)が分かりやすくて便利です。
-
-![](imgs/tutorial_01/x8_tuto_01_sp_input.jpg)
-
-以下のコードとその実行結果を見てください。
-
-```
-x8.fnt("Press Ⓐ to start game", 18, 30)
-x8.fnt(x8.enc("Press Ⓐ to start game"), 18, 60)
-```
-
-![](imgs/tutorial_01/x8_tuto_01_sp_char.jpg)
-
-コードの1行目の結果が上、2行目の結果が下です。上では、文字列中の`Ⓐ`が正しく表示されていません。下では、`Ⓐ`を含め文字列が正しく表示されています。
-
-2行目の`x8.enc`は、文字列に含まれるカタカナや特殊文字の文字コードを、Lua言語が扱える文字コードに変換して返す関数です。この場合、文字列中の`Ⓐ`がLua言語が扱える文字コードに変換されるので、結果正しく表示されます。
-
-Note: カタカナや特殊文字を含む文字列を利用する場合は、必ず最初に`x8.enc`で変換してから利用します。そうしないと文字化けしてしまいます。
 
 ---
 
 ## コード全体の説明
 
-コードを読む準備が出来ました。もう一度、コード全体を見てみましょう。
+もう一度、ラケットを動かすコード全体を見てみましょう。
 
 ```
-INFO_Y = 118
+x = 32
+y = 108
+w = 24
+h = 4
+v = 2
 
-top_score = 0
-
--- Main
-function main()
-   -- Initialize
-   top_score = 0
-   -- Game scenes
-   while true do
-      titleScene()
-      playScene()
-      gameoverScene()
+while true do
+   -- Move
+   if x8.btnprs(0) then -- ←
+      x = x - v
+   elseif x8.btnprs(1) then -- →
+      x = x + v
    end
-end
-
--- Title Scene
-function titleScene()
-   -- Clear screen
+   -- Draw
    x8.cls()
-   -- Draw title
-   x8.fntscale(3, 3)
-   local title = "B.BREAKER"
-   local tw = x8.fntmeas(title)
-   x8.fnt(title, (128 - tw) * 0.5 + 1, 24 + 1, 11) -- Shadow
-   x8.fnt(title, (128 - tw) * 0.5, 24, 7)
-   -- Draw operating instructions
-   x8.fntscale()
-   local prst = "Press Ⓐ to start game"
-   local prstw = x8.fntmeas(prst)
-   x8.fnt(x8.enc("←→"), 16, 70, 6)
-   x8.fnt(x8.enc("Ⓐ or Ⓑ"), 16, 80, 6)
-   x8.fnt(".. Move Racket", 56, 70, 6)
-   x8.fnt(".. Shoot, Quick", 56, 80, 6)
-   -- Draw message
-   x8.fnt(x8.enc(prst), (128 - prstw) * 0.5, INFO_Y, 7)
-   -- Draw top score
-   x8.fnt("TOP SCORE", 16, 100, 6)
-   x8.fnt(".. "..top_score, 56, 100, 6)
-   -- Wait
-   while true do
-      -- Press A to start game
-      if x8.btntrg(4) then break end
-      -- Next frame
-      x8.wait()
-   end
-end
-
--- Game over scene
-function gameoverScene()
-   -- Clear screen
-   x8.cls()
-   -- Draw message
-   x8.fntscale()
-   local message = "GAME OVER"
-   local w, h = x8.fntmeas(message)
-   local y = 56
-   x8.fnt(message, (128 - w) * 0.5, (128 - h) * 0.5, 8)
-   -- Wait
-   x8.wait(30 * 3)
-end
-
--- Play Scene
-function playScene()
-   x8.cls()
-   x8.fnt("PLAY", 40, 50)
+   x8.rect(x, y, x + w - 1, y + h - 1)
+   -- Next frame
    x8.wait()
-   while true do
-      if x8.btntrg(4) then break end
-      x8.wait()
-   end
-   top_score = top_score + 100
-end
-
--- Start the game
-main()
-```
-
-### グローバル変数
-
-最初に2つのグローバル変数`INFO_Y`と`top_score`があります。何の変数か調べるため、[Codeエディタ](manual.md#Codeエディタ)の**検索機能**で検索して、変数が使われているところを見てみましょう。
-
-変数名の上にカーソルを合わせてから、**検索メニュー**の**前方検索**（またはショートカット`Ctrl+F`）で検索ウィンドウを開きます。すると、検索する文字列に変数名が設定された状態でウィンドウが開くので、そのまま検索して使われているところを見てみます。
-
-![](imgs/tutorial_01/x8_tuto_01_search.gif)
-
-`INFO_Y`は、タイトルシーンでの`"Press Ⓐ to start game"`を表示するy座標です。
-
-Hint: メッセージのy座標をわざわざ変数に入れて使っているのは、開発時にy座標を調整しやすくするためです。このように、あとで調整したい値は、変数に入れて目立つところ（プログラムや関数定義の先頭など）にまとめておくと、作業がしやすくなります。
-
-`top_score`は、タイトルシーンで`"TOP SCORE"`の右に表示される数値です。本来はトップスコアの値が入りますが、このコードではプレイシーンを抜けるたびに`+ 100`しています。
-
-Hint: トップスコアの値をグローバル変数に入れているのは、プログラム内のいろんな場所から利用するためです。グローバル変数は、目立つところ（プログラムの先頭など）にまとめておくと、作業がしやすくなります。
-
-###  メイン関数
-
-次はメイン関数です。
-
-```
--- Main
-function main()
-   -- Initialize
-   top_score = 0
-   -- Game scenes
-   while true do
-      titleScene()
-      playScene()
-      gameoverScene()
-   end
 end
 ```
 
-メイン関数については[ここで説明](tutorial_01_06.md#メイン関数)しました。各シーンを順番に呼び出す無限ループがあります。ループの前に`top_score`を`0`クリアするコードが追加されています。
+`x8.btnprs`は、現フレームでボタンが押されているかどうかの情報を返します。`x8.btnprs(0)`の場合、現フレームで`←`ボタンが押されていれば`true`、押されていなければ`false`を返します。`x8.btnprs(1)`は`→`ボタンの情報を返します。
 
-Hint: トップスコアのクリアのように、最初の状態に設定するようなことを**初期化**するといいます。トップスコアは最初に一度だけ初期化すればよいので、シーン遷移ループの前で行っています。
+Note: `x8.btnprs`と`x8.btntrg`の違いに注意してください。`x8.btnprs`は現在ボタンが **ON** かどうかを、`x8.btntrg`は前回から今回でボタンが **OFF** → **ON** になったかどうかを返します。ラケットはボタンを押しっぱなしでも移動させたいので`x8.btnprs`を使っています。
 
-### タイトルシーン関数
+変数`x`、`y`はラケット矩形の座標を、`w`、`h`はラケット矩形の幅と高さを格納しています。**変数`v`は1フレームあたりの移動量です。**
 
-次はタイトルシーン関数です。
+Hint: このコードでは`y`や`v`など、コード中で変更されることがない数値も、コードの先頭で変数に入れています。こうしておくと、ただの数値より意味が分かりやすいし、後で数値を変更したくなっても1箇所の変更で済みます。
 
-```
--- Title Scene
-function titleScene()
-   -- Clear screen
-   x8.cls()
-   -- Draw title
-   x8.fntscale(3, 3)
-   local title = "B.BREAKER"
-   local tw = x8.fntmeas(title)
-   x8.fnt(title, (128 - tw) * 0.5 + 1, 24 + 1, 11) -- Shadow
-   x8.fnt(title, (128 - tw) * 0.5, 24, 7)
-   -- Draw operating instructions
-   x8.fntscale()
-   local prst = "Press Ⓐ to start game"
-   local prstw = x8.fntmeas(prst)
-   x8.fnt(x8.enc("←→"), 16, 70, 6)
-   x8.fnt(x8.enc("Ⓐ or Ⓑ"), 16, 80, 6)
-   x8.fnt(".. Move Racket", 56, 70, 6)
-   x8.fnt(".. Shoot, Quick", 56, 80, 6)
-   -- Draw message
-   x8.fnt(x8.enc(prst), (128 - prstw) * 0.5, INFO_Y, 7)
-   -- Draw top score
-   x8.fnt("TOP SCORE", 16, 100, 6)
-   x8.fnt(".. "..top_score, 56, 100, 6)
-   -- Wait
-   while true do
-      -- Press A to start game
-      if x8.btntrg(4) then break end
-      -- Next frame
-      x8.wait()
-   end
-end
-```
 
-ちょっとごちゃごちゃしていますが、要約すると以下のようになります。
+結局このコードは、以下のような意味になります。
 
 ```
--- Title Scene
-function titleScene()
-   -- Clear screen
+変数の初期化
+
+while true do
+   -- Move
+   ← が押されていたら
+      x 座標を v だけ左にずらす
+   でなければ、 → が押されていたら
+      x 座標を v だけ右にずらす
+   -- Draw
    画面をクリアする
-   -- Draw title
-   タイトルを表示する
-   -- Draw operating instructions
-   操作方法を表示する
-   -- Draw message
-   Ⓐ押下を促すメッセージを表示する
-   -- Draw top score
-   トップスコアを表示する
-   -- Wait
-   Ⓐボタンが押されるのを待つ
+   ラケットを座標 x,y に表示する
+   -- Next frame
+   フレームを更新する
 end
 ```
 
-**タイトルを表示する**部分は、[ここで説明](tutorial_01_04.md#タイトル表示コードの説明)しました。横位置をセンタリングしつつ、影を付けるため2回描画しています。
+本体部分はフレーム更新を含む無限ループなので、ループ内の処理が1/30秒毎に1回（毎秒30回）実行されます。
 
-**操作方法を表示する**部分で`x8.fntscale()`しているのは、タイトル表示で変更された文字の表示倍率を元に戻すためです。
+現フレームの入力によってラケット位置を少しずらし、画面をクリアしたのち、新しい位置にラケットを描く、ということを毎フレーム繰り返しています。
 
-**操作方法を表示する**部分と**トップスコアを表示する**部分では、ボタンとその説明、`"TOP SCORE"`とその値など、各パーツ毎に位置を指定して表示しています。特殊文字を含む文字列は、必ず`x8.enc`を通していることに注意してください。
+このコードは、ごく短い時間間隔で、位置を少しづつずらすことにより、パラパラ漫画のアニメーションのようにラケットを動かしています。
 
-**Ⓐ押下を促すメッセージを表示する**部分のx座標の計算式は、タイトル表示と同じく横位置のセンタリングを行うものです。
+![](imgs/tutorial_01/x8_tuto_01_racket_move.gif)
 
-```
-   x8.fnt(x8.enc(prst), (128 - prstw) * 0.5, INFO_Y, 7)
-```
+Hint: 毎フレーム必ず、`x8.cls()`で画面をクリアしてから描画しているのがポイントです。画面をクリアしないと、以前に描画したものが全て残っているので動いているように見えません。
 
-**Ⓐボタンが押されるのを待つ**部分は、[ここで説明](tutorial_01_05.md#フレームループとボタン入力)しました。無限ループが`x8.wait()`を含むことに注意してください。
+Hint: このように、短い時間毎の処理を高速で繰り返すことで、連続して動いているように見せるのが、リアルタイムっぽいゲームの基本になります。
 
-### ゲームオーバーシーン関数
+![](imgs/tutorial_01/x8_tuto_01_racket.gif)
 
-次はゲームオーバーシーン関数です。
-
-```
--- Game over scene
-function gameoverScene()
-   -- Clear screen
-   x8.cls()
-   -- Draw message
-   x8.fntscale()
-   local message = "GAME OVER"
-   local w, h = x8.fntmeas(message)
-   local y = 56
-   x8.fnt(message, (128 - w) * 0.5, (128 - h) * 0.5, 8)
-   -- Wait
-   x8.wait(30 * 3)
-end
-```
-
-画面に`"GAME OVER"`を表示して3秒待ったらおしまいです。
-
-`x8.fnt`の座標指定の計算式で、縦と横をセンタリングしているので、画面の中央に表示されます。
-
-### プレイシーン関数
-
-次はプレイシーン関数です。
-
-```
--- Play Scene
-function playScene()
-   x8.cls()
-   x8.fnt("PLAY", 40, 50)
-   x8.wait()
-   while true do
-      if x8.btntrg(4) then break end
-      x8.wait()
-   end
-   top_score = top_score + 100
-end
-```
-
-画面に`"PLAY"`を表示して、Ⓐボタンが押されるまで無限ループで待ちます。ループを抜けたらトップスコアに`+ 100`しておしまいです。プレイシーンを抜けるたびにトップスコアが`+100`されます。
-
-### メイン関数呼び出し
-
-最後にメイン関数を呼び出して、ゲームの実行を開始しています。以上！！
-
-![](imgs/tutorial_01/x8_tuto_01_bb_scenes.gif)
-
-#### これで **プレイシーン以外の全て** の説明はおしまいです。次行きましょー！！
+#### これで **ラケットの表示と動き** の説明はおしまいです。次行きましょー！！
