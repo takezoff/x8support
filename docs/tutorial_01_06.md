@@ -376,3 +376,7 @@ end
 ![](imgs/tutorial_01/x8_tuto_01_bb_scenes.gif)
 
 #### これで **プレイシーン以外の全て** の説明はおしまいです。次行きましょー！！
+
+[次へ](tutorial_01_07.md)
+
+[このチュートリアルのトップへ](tutorial_01.md)

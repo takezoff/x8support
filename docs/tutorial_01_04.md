@@ -214,3 +214,7 @@ end
 ![](imgs/tutorial_01/x8_tuto_01_scenes.gif)
 
 #### これで **シーンとシーン遷移** の説明はおしまいです。次行きましょー！！
+
+[次へ](tutorial_01_05.md)
+
+[このチュートリアルのトップへ](tutorial_01.md)

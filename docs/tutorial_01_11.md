@@ -184,3 +184,7 @@ end
 ![](imgs/tutorial_01/x8_tuto_01_racket_hit_back.gif)
 
 #### これで **来たほうに打ち返す** の説明はおしまいです。次行きましょー！！
+
+[次へ](tutorial_01_12.md)
+
+[このチュートリアルのトップへ](tutorial_01.md)

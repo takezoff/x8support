@@ -232,3 +232,7 @@ end
 ![](imgs/tutorial_01/x8_tuto_01_racket_ctrl.gif)
 
 #### これで **ラケットの操作と演算子** の説明はおしまいです。次行きましょー！！
+
+[次へ](tutorial_01_09.md)
+
+[このチュートリアルのトップへ](tutorial_01.md)
