@@ -15,7 +15,7 @@
 
 ![](downloads/samples/BBreaker.jpg "B.BREAKER")
 
-- Ver.1.0
+- Ver.1.1
 - Block breaking game sample
-- **Updated 2020/7/4**
+- **Updated 2020/8/5**
 - **<a href="downloads/samples/BBreaker.x8proj" download>Download</a>**

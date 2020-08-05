@@ -64,16 +64,16 @@ while true do
 
    -- Bounce by the left wall
    if ball_x < 0 then
-      ball_x = -ball_x
+      ball_x = ball_x - (ball_x * 2)
       ball_vx = -ball_vx
    -- Bounce by the right wall
    elseif (ball_x + ball_w) > SCREEN_W then
-      ball_x = SCREEN_W - ((ball_x + ball_w) - SCREEN_W) - ball_w
+      ball_x = ball_x - (((ball_x + ball_w) - SCREEN_W) * 2)
       ball_vx = -ball_vx
    end
    -- Bounce by the above wall
    if ball_y < 0 then
-      ball_y = -ball_y
+      ball_y = ball_y - (ball_y * 2)
       ball_vy = -ball_vy
    end
 
@@ -199,16 +199,16 @@ Hint: 変数名が大文字だったり小文字だったりするのは、そ�
 
    -- Bounce by the left wall
    if ball_x < 0 then
-      ball_x = -ball_x
+      ball_x = ball_x - (ball_x * 2)
       ball_vx = -ball_vx
    -- Bounce by the right wall
    elseif (ball_x + ball_w) > SCREEN_W then
-      ball_x = SCREEN_W - ((ball_x + ball_w) - SCREEN_W) - ball_w
+      ball_x = ball_x - (((ball_x + ball_w) - SCREEN_W) * 2)
       ball_vx = -ball_vx
    end
    -- Bounce by the above wall
    if ball_y < 0 then
-      ball_y = -ball_y
+      ball_y = ball_y - (ball_y * 2)
       ball_vy = -ball_vy
    end
 

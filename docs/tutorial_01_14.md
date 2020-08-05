@@ -108,18 +108,18 @@ function playScene()
 
       -- Bounce by the left wall
       if ball.x < 0 then
-         ball.x = -ball.x
+         ball.x = ball.x - (ball.x * 2)
          ball.vx = -ball.vx
          x8.sfx(0)
       -- Bounce by the right wall
       elseif (ball.x + ball.w) > SCREEN_W then
-         ball.x = SCREEN_W - ((ball.x + ball.w) - SCREEN_W) - ball.w
+         ball.x = ball.x - (((ball.x + ball.w) - SCREEN_W) * 2)
          ball.vx = -ball.vx
          x8.sfx(0)
       end
       -- Bounce by the above wall
       if ball.y < 0 then
-         ball.y = -ball.y
+         ball.y = ball.y - (ball.y * 2)
          ball.vy = -ball.vy
          x8.sfx(0)
       end
@@ -360,7 +360,7 @@ block_colors = { 10, 11, 3 }
 
 #### これで **ブロックの破壊** の説明はおしまいです。次行きましょー！！
 
-次へ（工事中）
+[次へ](tutorial_01_15.md)
 
 [このチュートリアルのトップへ](tutorial_01.md)
 

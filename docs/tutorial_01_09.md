@@ -35,16 +35,16 @@ while true do
    y = y + vy
    -- Bounce by the left wall
    if x < 0 then
-      x = -x
+      x = x - (x * 2)
       vx = -vx
    -- Bounce by the right wall
    elseif (x + w) > SCREEN_W then
-      x = SCREEN_W - ((x + w) - SCREEN_W) - w
+      x = x - (((x + w) - SCREEN_W) * 2)
       vx = -vx
    end
    -- Bounce by the above wall
    if y < 0 then
-      y = -y
+      y = y - (y * 2)
       vy = -vy
    end
    -- Draw
@@ -130,16 +130,16 @@ Hint: **乱数**の作成は、ゲーム開発のいろんな場面で使われ�
 ```
    -- Bounce by the left wall
    if x < 0 then
-      x = -x
+      x = x - (x * 2)
       vx = -vx
    -- Bounce by the right wall
    elseif (x + w) > SCREEN_W then
-      x = SCREEN_W - ((x + w) - SCREEN_W) - w
+      x = x - (((x + w) - SCREEN_W) * 2)
       vx = -vx
    end
    -- Bounce by the above wall
    if y < 0 then
-      y = -y
+      y = y - (y * 2)
       vy = -vy
    end
 ```
@@ -148,11 +148,13 @@ Hint: **乱数**の作成は、ゲーム開発のいろんな場面で使われ�
 
 左壁の場合はこんなふうです。（上壁も同様です）
 
-![](imgs/tutorial_01/x8_tuto_01_wall_bound_l.png)
+![](imgs/tutorial_01/x8_tuto_01_fig_wall_bound_left.png)
+
+図中の`d`がはみ出した分の移動量です。`d`の符号に注意してください。
 
 表示の基準位置が左上なため、右壁の処理がややこしいですが、やっていることはどの方向も同じです。
 
-![](imgs/tutorial_01/x8_tuto_01_wall_bound_r.png)
+![](imgs/tutorial_01/x8_tuto_01_fig_wall_bound_right.png)
 
 下壁について何もしていなので、画面の下に消えたボールはずっと動き続けますが、ここでは気にしません。
 

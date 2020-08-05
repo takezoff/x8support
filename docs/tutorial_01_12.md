@@ -70,18 +70,18 @@ function playScene()
 
       -- Bounce by the left wall
       if ball.x < 0 then
-         ball.x = -ball.x
+         ball.x = ball.x - (ball.x * 2)
          ball.vx = -ball.vx
          x8.sfx(0)
       -- Bounce by the right wall
       elseif (ball.x + ball.w) > SCREEN_W then
-         ball.x = SCREEN_W - ((ball.x + ball.w) - SCREEN_W) - ball.w
+         ball.x = ball.x - (((ball.x + ball.w) - SCREEN_W) * 2)
          ball.vx = -ball.vx
          x8.sfx(0)
       end
       -- Bounce by the above wall
       if ball.y < 0 then
-         ball.y = -ball.y
+         ball.y = ball.y - (ball.y * 2)
          ball.vy = -ball.vy
          x8.sfx(0)
       end
@@ -137,6 +137,8 @@ playScene()
 これは、**B.BREAKER**の実際のコードから、ラケットとボールを動かすのに必要な部分を抜き出したものです。
 
 この実行結果は、前回の[来たほうに打ち返すコード](tutorial_01_11.md)の挙動と**全く同じ**です。違うのはコードの書き方だけです。
+
+Note: コード中に`x8.sfx(0)`というAPI呼び出しが出てきます。これはボールがバウンドする際などに効果音を再生しているコードです。効果音についてはこのチュートリアルの範囲外なので触れませんが、`B.BREAKER`のプログラムは効果音データが無くても、音が鳴らないこと以外は問題なく動作します。
 
 ---
 
