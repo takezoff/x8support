@@ -15,6 +15,7 @@
 
 * [x8studio マニュアル](manual.md)
 * [x8 APIリファレンス](api_reference.md)
+* [x8 コードサンプル集](code_samples_toc.md)
 * [x8 プログラミングチュートリアル](programming_tutorial.md)
 * [Lua 簡易リファレンス](lua_basics.md)
 * [Lua 標準ライブラリ](lua_stdlib.md)

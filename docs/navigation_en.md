@@ -15,6 +15,7 @@
 
 * [x8studio Manual](manual_en.md)
 * [x8 API Reference](api_reference_en.md)
+* [x8 Code Samples](code_samples_toc.md)
 * [x8 Programming Tutorial](programming_tutorial_en.md)
 * [Lua Simple Reference](lua_basics.md)
 * [Lua Standard Libraries](lua_stdlib.md)
