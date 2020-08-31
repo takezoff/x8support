@@ -1,4 +1,4 @@
-# API Reference
+# Reference Manual
 
 ## In the beginning
 
