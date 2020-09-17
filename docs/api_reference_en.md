@@ -242,7 +242,7 @@ The x8 can emit sound from up to four channels at the same time. The system auto
 - Sets the character spacing that is reflected when the font is drawn.
 - Default value of argument : `spcx=0`,`spcy=0`.
 
-`x8.fntmeas(str) -> size_x,size_y`
+`x8.fntmeas(str)`
 
 - Returns the size of the string `str` when it is drawn, taking into account the drawing state and each character size, as an integer `w,h` in pixels.
 
