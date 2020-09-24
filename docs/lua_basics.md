@@ -1,4 +1,4 @@
-# Lua 5.3 クイックリファレンス
+# <img src="imgs/lua/Lua-Logo_128x128.png" width="50"> Lua 5.3 クイックリファレンス
 
 ## はじめに
 
